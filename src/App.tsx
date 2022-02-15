@@ -1,13 +1,6 @@
 import React, { useState } from 'react';
 import './App.css';
-
-interface Note {
-  id: string;
-  title: string;
-  text: string;
-  color: string;
-  date: string;
-}
+import { Note } from './models/note.model';
 
 function App() {
   const [notes, setNotes] = useState<Note[]>([
