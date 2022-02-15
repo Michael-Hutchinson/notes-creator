@@ -1,4 +1,5 @@
 import React from 'react';
+import { Button, Card } from 'react-bootstrap';
 import { Note } from '../models/note.model';
 
 interface INotesProps {
@@ -8,7 +9,18 @@ interface INotesProps {
 const Notes: React.FunctionComponent<INotesProps> = ({ note }) => {
   return (
     <>
-      <div>Note Card</div>
+      <div className="mb-3">
+        <Card>
+          <Card.Body>
+            <Card.Title>{note.title}</Card.Title>
+            <Card.Text>{note.text}</Card.Text>
+            <Card.Subtitle className="text-muted">{note.date}</Card.Subtitle>
+            <Button className="mt-3" variant="danger">
+              Delete
+            </Button>
+          </Card.Body>
+        </Card>
+      </div>
     </>
   );
 };
