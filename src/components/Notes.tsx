@@ -10,7 +10,7 @@ const Notes: React.FunctionComponent<INotesProps> = ({ note }) => {
   return (
     <>
       <div className="mb-3">
-        <Card>
+        <Card style={{ backgroundColor: note.color }}>
           <Card.Body>
             <Card.Title>{note.title}</Card.Title>
             <Card.Text>{note.text}</Card.Text>
