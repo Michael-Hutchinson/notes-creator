@@ -4,7 +4,7 @@ import { Note } from './models/note.model';
 import Header from './components/Header';
 import NotesList from './components/NotesList';
 
-const App = () => {
+const App: React.FunctionComponent = () => {
   const [notes, setNotes] = useState<Note[]>([
     {
       id: new Date().toString(),
