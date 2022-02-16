@@ -1,5 +1,6 @@
+/* eslint-disable consistent-return */
 import React, { useRef, useState } from 'react';
-import { Form, Button } from 'react-bootstrap';
+import { Form, Button, Alert } from 'react-bootstrap';
 import { Note } from '../models/note.model';
 
 interface ICreateNotesProps {
@@ -19,7 +20,7 @@ const CreateNotes: React.FunctionComponent<ICreateNotesProps> = ({
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
     if (titleRef.current?.value === '' || textRef.current?.value === '') {
-      setError('Please fill in all fields');
+      return setError('Please fill in all fields');
     }
     setError('');
     setNotes([
@@ -38,6 +39,7 @@ const CreateNotes: React.FunctionComponent<ICreateNotesProps> = ({
   return (
     <>
       <h2>Create Notes</h2>
+      {error && <Alert variant="danger">{error}</Alert>}
       <Form className="mt-3 mb-3" onSubmit={(e) => handleSubmit(e)}>
         <Form.Group className="mb-3" controlId="formBasicTitle">
           <Form.Label>Title:</Form.Label>
