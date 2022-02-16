@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { Note } from './models/note.model';
 import Header from './components/Header';
 import NotesList from './components/NotesList';
+import CreateNotes from './components/CreateNotes';
 
 const App: React.FunctionComponent = () => {
   const [notes, setNotes] = useState<Note[]>([
@@ -21,6 +22,11 @@ const App: React.FunctionComponent = () => {
         <Row>
           <Col>
             <NotesList notes={notes} setNotes={setNotes} />
+          </Col>
+        </Row>
+        <Row>
+          <Col>
+            <CreateNotes notes={notes} setNotes={setNotes} />
           </Col>
         </Row>
       </Container>
