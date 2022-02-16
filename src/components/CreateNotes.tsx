@@ -5,13 +5,13 @@ interface ICreateNotesProps {}
 
 const CreateNotes: React.FunctionComponent<ICreateNotesProps> = (props) => {
   const [error, setError] = useState<string>('');
-  const titleRef = React.useRef<HTMLInputElement | null>(null);
-  const textRef = React.useRef<HTMLTextAreaElement | null>(null);
-  const colorRef = React.useRef<HTMLInputElement | null>(null);
+  const titleRef = useRef<HTMLInputElement | null>(null);
+  const textRef = useRef<HTMLTextAreaElement | null>(null);
+  const colorRef = useRef<HTMLInputElement | null>(null);
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    if ((titleRef.current.value === '') | (textRef.current.value === '')) {
+    if (titleRef.current.value === '' || textRef.current.value === '') {
       return setError('Please fill in all fields');
     }
   };
