@@ -11,7 +11,7 @@ const CreateNotes: React.FunctionComponent<ICreateNotesProps> = (props) => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>): void => {
     e.preventDefault();
-    if (titleRef.current.value === '' || textRef.current.value === '') {
+    if (titleRef.current?.value === '' || textRef.current?.value === '') {
       return setError('Please fill in all fields');
     }
   };
